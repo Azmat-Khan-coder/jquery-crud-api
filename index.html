@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Recepies</title>
+
+    <script src="./jquery/jquery-3.5.1.min.js"></script>
+    <script src="./jquery/popper.min.js"></script>
+    <script src="./jquery/bootstrap.min.js"></script>
+    <script src="./jquery/jqcrud.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+</head>
+<body class="container">
+    <h1>Recipies API Client</h1>
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+          Add Recipe
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add Recipe</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text"
+                    class="form-control" name="title" id="title" aria-describedby="titleHelp" placeholder="Enter Title">
+                  <small id="titleHelp" class="form-text text-muted">Enter title of the subject</small>
+                </div>
+                <div class="form-group">
+                  <label for="body">Body</label>
+                  <input type="text"
+                    class="form-control" name="body" id="body" aria-describedby="bodyHelp" placeholder="Enter details">
+                  <small id="bodyHelp" class="form-text text-muted">Enter the details about title</small>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="addBtn" class="btn btn-info">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div id="recipies">
+        <div class="spinner-border my-2 mx-4" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+      </div>
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Update Record</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="updateId">
+              <div class="form-group">
+                <label for="updateTitle">Title</label>
+                <input type="text"
+                  class="form-control" name="updateTitle" id="updateTitle" aria-describedby="updateTitleHelp" placeholder="">
+                <small id="updateTitleHelp" class="form-text text-muted">Update Title</small>
+              </div>
+              <div class="form-group">
+                <label for="updateBody">Body</label>
+                <textarea class="form-control" name="updateBody" id="updateBody" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="updateSave">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
